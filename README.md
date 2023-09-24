@@ -4,9 +4,10 @@
 ## Sistema de Autoatendimento de Fast Food
 
 1. Contexto do Domínio
+
 Uma lanchonete local está expandindo devido ao seu grande sucesso. Para atender à demanda crescente e evitar confusões no atendimento, identificou-se a necessidade de um sistema de controle de pedidos eficiente. O sistema permitirá que os clientes selecionem e façam pedidos sem interagir diretamente com um atendente, otimizando a eficiência e satisfação do cliente no back-end.
 
-2. Entidades e Agregações
+3. Entidades e Agregações
 
 - Entidades:
   - Consumidor
