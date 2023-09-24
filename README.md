@@ -1,53 +1,53 @@
 # Primeira fase
 
 
-## Sistema de Autoatendimento de Fast Food
+Sistema de Controle de Pedidos de Lanchonete
 
 1. Contexto do Domínio
+Com o crescimento de uma lanchonete local, surge a necessidade de otimizar e organizar o processo de pedidos e entregas. Para garantir a eficiência e a satisfação dos clientes, desenvolvemos um sistema de controle de pedidos que aborda desde a escolha do produto até a retirada do pedido.
 
-Uma lanchonete local está expandindo devido ao seu grande sucesso. Para atender à demanda crescente e evitar confusões no atendimento, identificou-se a necessidade de um sistema de controle de pedidos eficiente. O sistema permitirá que os clientes selecionem e façam pedidos sem interagir diretamente com um atendente, otimizando a eficiência e satisfação do cliente no back-end.
+2. Entidades e Agregações
+Entidades:
 
-3. Entidades e Agregações
+Cliente
+Produto
+Pedido
+Fatura
+Agregações:
 
-- Entidades:
-  - Consumidor
-  - Item de Menu
-  - Requisição
-  - Registro Financeiro
-
-- Agregações:
-  - Componentes da Requisição (agrupa itens de menu específicos sob uma Requisição)
-  - Equipe de Preparo (conjunto de profissionais encarregados de montar os itens de menu)
+Itens do Pedido (agrupa produtos específicos sob um Pedido)
+Cozinha (conjunto de profissionais e equipamentos dedicados à preparação dos produtos)
 
 3. Objetos de Valor
-- Segmento de Item
-- Estágio da Requisição
-- Estágio de Transação
+Categoria de Produto
+Status do Pedido
+Status de Pagamento
 
 4. Eventos de Domínio
-- PedidoColocado: Ocorre quando um Consumidor faz uma Requisição.
-- PedidoPreparado: Ocorre quando a Equipe de Preparo finaliza uma Requisição.
-- PagamentoRealizado: Ocorre quando um Consumidor completa o processo de pagamento.
-- PagamentoRecusado: Ocorre quando há um problema com a transação de pagamento.
+PedidoRealizado: Ocorre quando um Cliente faz um Pedido.
+PedidoPreparado: Ocorre quando a Cozinha finaliza os Itens do Pedido.
+PagamentoConfirmado: Ocorre quando o pagamento é efetivamente registrado.
+PagamentoRecusado: Ocorre quando há um problema com a transação de pagamento.
 
 5. Restrições e Regras de Negócio
-- Cada Requisição deve ter pelo menos um Item de Menu.
-- A transição do Estágio da Requisição só pode ocorrer em uma sequência específica: PedidoColocado -> PedidoPreparado.
-- O PagamentoRealizado deve preceder a entrega da Requisição ao Consumidor.
+Cada Pedido deve conter pelo menos um Produto.
+A transição do Status do Pedido deve ocorrer em uma sequência definida, como: PedidoRealizado -> PedidoEmPreparo -> PedidoPronto -> PedidoEntregue.
+A confirmação da Fatura precede a entrega do Pedido ao Cliente.
+
 
 6. Relacionamentos
-- Um Consumidor pode fazer várias Requisições, mas cada Requisição pertence a apenas um Consumidor.
-- Uma Requisição pode ter vários Itens de Menu, mas cada Item de Menu pode estar em apenas uma Requisição de cada vez.
+Um Cliente pode fazer vários Pedidos, mas cada Pedido pertence a apenas um Cliente.
+Um Pedido pode conter vários Produtos, mas cada Produto pode ser parte de diversos Pedidos.
 
-7. Interfaces de Bounded Contexts
-(Como não tenho detalhes sobre contextos delimitados, vou supor um exemplo aqui)
-- **Modulo de Gestão de Estoque**: Interage com o sistema principal para verificar a disponibilidade de itens e ingredientes.
 
-8. Consistência e Transações
-- Quando um Consumidor coloca uma Requisição, a disponibilidade do Item de Menu é verificada no Módulo de Gestão de Estoque.
-- Todas as transações de pagamento são registradas e têm um status associado para rastreabilidade.
+7. Consistência e Transações
+A disponibilidade de um Produto é verificada ao realizar o Pedido.
+Todos os pagamentos são registrados em uma Fatura e têm um Status de Pagamento associado para rastreabilidade.
 
-9. Glossário
-- **Consumidor**: Indivíduo que realiza a solicitação de produtos no estabelecimento.
-- **Item de Menu**: Alimento ou bebida oferecido pelo local.
+
+8. Glossário
+Cliente: Indivíduo que realiza a solicitação de produtos na lanchonete.
+Produto: Alimento ou bebida que é oferecido pela lanchonete.
+Categoria: Classificação de um Produto conforme suas características (por exemplo, bebidas, lanches, sobremesas).
+
 
