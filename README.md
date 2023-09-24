@@ -51,3 +51,6 @@ Produto: Alimento ou bebida que é oferecido pela lanchonete.
 Categoria: Classificação de um Produto conforme suas características (por exemplo, bebidas, lanches, sobremesas).
 
 
+Diagramas de fluxo
+Foram utilizadas técnicas de Domain Driven Design para definição dos fluxos:
+
