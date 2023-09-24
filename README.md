@@ -50,3 +50,6 @@ Cliente: Indivíduo que realiza a solicitação de produtos na lanchonete.
 Produto: Alimento ou bebida que é oferecido pela lanchonete.
 Categoria: Classificação de um Produto conforme suas características (por exemplo, bebidas, lanches etc)
 
+
+
+![Preparacao_EntregaPedido](https://github.com/Jeffe-git/First-Project/assets/40615923/fb7c901d-e6c9-4f90-8c6e-f508ba67557e)
