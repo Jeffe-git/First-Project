@@ -48,9 +48,5 @@ Todos os pagamentos são registrados em uma Fatura e têm um Status de Pagamento
 8. Glossário
 Cliente: Indivíduo que realiza a solicitação de produtos na lanchonete.
 Produto: Alimento ou bebida que é oferecido pela lanchonete.
-Categoria: Classificação de um Produto conforme suas características (por exemplo, bebidas, lanches, sobremesas).
-
-
-Diagramas de fluxo
-Foram utilizadas técnicas de Domain Driven Design para definição dos fluxos:
+Categoria: Classificação de um Produto conforme suas características (por exemplo, bebidas, lanches etc)
 
